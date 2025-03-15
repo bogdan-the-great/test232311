@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 100vh; /* Full height of the viewport */
+    width: 100vw; /* Full width of the viewport */
+}
+
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.tile:hover {
+    background-color: #e0e0e0; /* Change color on hover */
+}
+
+.tile.clicked {
+    background-color: red; /* Change color when clicked */
+}
