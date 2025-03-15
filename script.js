@@ -10,16 +10,30 @@ const texts = [
 ];
 
 // Function to create the grid
+// Function to shuffle an array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+}
+
+// Function to create the grid
 function createGrid() {
     const gridContainer = document.getElementById('grid-container');
+
+    // Shuffle the texts array
+    const shuffledTexts = [...texts]; // Create a copy of the texts array
+    shuffleArray(shuffledTexts);
 
     for (let i = 0; i < 25; i++) {
         // Create a tile
         const tile = document.createElement('div');
         tile.className = 'tile';
 
-        // Get a random text from the array
-        const randomText = texts[Math.floor(Math.random() * texts.length)];
+        // Assign "WYZWISKA" to the tile at index 13, otherwise use shuffled text
+        const randomText = (i === 12) ? "WYZWISKA" : shuffledTexts[i < 12 ? i : i - 1];
+
         tile.textContent = randomText;
 
         // Add click event listener to the tile
