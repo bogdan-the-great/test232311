@@ -20,22 +20,27 @@ body, html {
 }
 
 .tile {
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 1px solid #ccc;
-    background-color: #f4f4f4;
-    font-size: 24px;
+    border: 1px solid #000000;
+    background-color: #cfcfcf;
+    font-size: 25px;
     font-weight: bold;
     color: #333;
     cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 .tile:hover {
-    background-color: #e0e0e0; /* Change color on hover */
+    background-color: #a8a8a8; /* Change color on hover */
 }
 
 .tile.clicked {
     background-color: red; /* Change color when clicked */
+}
+
+.tile:nth-child(13) {
+    background-color: yellow !important; /* Change the background color of the 12th tile to yellow */
 }
